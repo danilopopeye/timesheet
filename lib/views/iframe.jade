@@ -1,0 +1,11 @@
+!!! 5
+html(no-manifest="timesheet.manifest")
+	head
+		meta(charset="UTF-8")
+		title Timesheet Mobile
+		style(type="text/css")
+			iframe { border: 1px solid; }
+	body
+		iframe(src="/", width="320", height="480")
+		iframe(src="/", width="480", height="320", style="display:none")
+

@@ -1,0 +1,290 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+#bar {
+  position: absolute;
+  height: 20px;
+  top: 0px;
+}
+body {
+  overflow: hidden;
+  padding-top: 20px;
+}
+#header {
+  background-color: #808080;
+  margin: 10px;
+}
+#header h1 {
+  font-weight: bold;
+  font-size: 100px;
+}
+#content {
+  background-color: #d3d3d3;
+  text-align: center;
+}
+#content .hours div {
+  padding: 10px;
+  border: 1px solid;
+}
+#content .hours div.minimum {
+  color: #90ee90;
+  background: #008000;
+}
+#content .hours div.maximum {
+  color: #f00;
+  background: #8b0000;
+}
+#calendar {
+  background: #ccc;
+  overflow: auto;
+  margin: 10px;
+}
+#calendar li {
+  text-align: center;
+  line-height: 20px;
+  float: left;
+}
+#calendar li span,
+#calendar li strong {
+  display: block;
+}
+@media screen and (max-width: 320px) {
+  #bar {
+    background-color: #00f;
+    width: 320px;
+  }
+  #header h1 {
+    padding: 10px 0;
+    text-align: center;
+  }
+  #content {
+    margin: 10px;
+    padding: 10px;
+  }
+  #content .hours {
+    zoom: 1;
+  }
+  #content .hours:before,
+  #content .hours:after {
+    content: "";
+    display: table;
+  }
+  #content .hours:after {
+    clear: both;
+  }
+  #content .hours span {
+    font-size: 50px;
+  }
+  #content .hours div {
+    width: 113px;
+    padding: 10px;
+    border: 1px solid;
+  }
+  #content .hours div.minimum {
+    float: left;
+  }
+  #content .hours div.maximum {
+    float: right;
+  }
+  #entrance {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px;
+  }
+  #entrance input {
+    text-align: center;
+    font-size: 40px;
+    width: 180px;
+    height: 72px;
+  }
+  #calendar {
+    border: 1px solid;
+    height: 60px;
+    width: 298px;
+  }
+  #calendar ul {
+    width: 666em;
+  }
+  #calendar li {
+    border-right: 1px solid;
+    padding: 10px 5px;
+    height: 40px;
+    width: 49px;
+  }
+  #calendar li:last-child {
+    border: 0 none;
+  }
+  #calendar li strong {
+    font-weight: bold;
+  }
+  footer {
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 480px) {
+  #bar {
+    background-color: #f00;
+    width: 480px;
+  }
+  #header {
+    height: 280px;
+    float: left;
+  }
+  #header h1 {
+    position: relative;
+    line-height: 120px;
+    padding: 20px;
+  }
+  #header .hour,
+  #header .minute {
+    display: block;
+  }
+  #header .divider {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+    position: absolute;
+    left: 60px;
+    top: 80px;
+  }
+  #content {
+    margin: 10px 70px 10px 160px;
+    height: 280px;
+  }
+  #content .hours {
+    padding: 10px;
+  }
+  #content .hours span {
+    font-size: 50px;
+  }
+  #content .hours div {
+    margin-bottom: 10px;
+  }
+  footer {
+    border-left: 1px solid;
+    height: 300px;
+    width: 60px;
+    top: 20px;
+    right: 0;
+  }
+  footer li {
+    border-bottom: 1px solid;
+    padding: 14px 5px;
+    display: block;
+    width: 49px;
+    height: 31px;
+  }
+  footer li:last-child {
+    border: 0 none;
+  }
+}

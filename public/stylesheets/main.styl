@@ -1,0 +1,65 @@
+@import nib
+
+global-reset()
+reset-html5()
+
+// colors
+// E6E2AF
+// A7A37E
+// EFECCA
+// 046380
+// 002F2F
+
+// debug only
+#bar
+  position: absolute
+  height: 20px
+  top: 0px
+
+body
+  overflow: hidden
+  padding-top: 20px
+
+#header
+  background-color: gray
+  margin: 10px
+
+  h1
+    font-weight: bold
+    font-size: 100px
+
+#content
+  background-color: lightgray
+  text-align: center
+
+  .hours
+    div
+      padding: 10px
+      border: 1px solid
+
+      &.minimum
+        color: lightgreen
+        background: green
+
+      &.maximum
+        color: red
+        background: darkred
+
+#calendar
+  background: #ccc
+  overflow: auto
+  margin: 10px
+
+  li
+    text-align: center
+    line-height: 20px
+    float: left
+
+    span, strong
+      display: block
+
+@media screen and (max-width: 320px)
+  @import portait
+
+@media screen and (min-width: 480px)
+  @import landscape

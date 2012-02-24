@@ -1,0 +1,21 @@
+{
+	"name": "timesheet",
+	"version": "0.1.0",
+	"private": true,
+	"author": "Danilo Sousa <eu@danilosousa.net>",
+	"description": "a simple timesheet to track work hours",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/danilopopeye/timesheet.git"
+	},
+	"license": "MIT",
+	"engine": {
+		"node": ">=0.6"
+	},
+	"dependencies": {
+		"express": "2.x",
+		"jade": "0.x",
+		"stylus": "0.x",
+		"nib": "0.3.x"
+	}
+}
