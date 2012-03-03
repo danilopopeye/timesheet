@@ -160,9 +160,8 @@ body {
   position: absolute;
   border: 1px solid #000;
   text-align: center;
-  margin: 0 auto;
   padding: 10px;
-  width: 50%;
+  width: 60%;
 }
 #bar {
   background-color: #00f;
@@ -234,7 +233,7 @@ body {
 }
 #month_box {
   top: 50%;
-  left: 20%;
+  left: 15%;
 }
 footer {
   text-align: center;
