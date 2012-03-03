@@ -36,5 +36,8 @@ app.get '/', (req, res) ->
 app.get '/iframe', (req, res) ->
 	res.render 'iframe', layout: false
 
+app.all '/api/:method', (req, res) ->
+	res.send status: 'success'
+
 app.listen process.env.PORT
 console.log 'Express server listening on port %d in %s mode', app.address().port, app.settings.env
