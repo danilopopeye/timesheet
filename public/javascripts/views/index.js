@@ -1,33 +1,41 @@
-define(['backbone', 'models/options'], function(Backbone, options){
-  var Options = new options({
-    id: 'timesheet-options' // localStorage need a id
-  });
-
+define([
+  'backbone', 'underscore', 'text!/templates/index.html'
+], function(Backbone, _, template){
   return Backbone.View.extend({
-    el: '#month_box',
+    el: 'body',
+
+    template: template,
 
     initialize: function(){
-      this.input = this.$el.find('#month');
+      this.model.bind('change', this.redirect, this);
 
-      Options.bind('change', this.render, this);
-
-      Options.fetch();
+      this.model.fetch({
+        error: _.bind(this.render, this)
+      });
     },
 
     events: {
       'click button': 'save'
     },
 
-    render: function(){
-      this.input.val(
-        Options.text()
+    redirect: function(){
+      var year = this.model.get('year'),
+        month = this.model.get('month');
+
+      this.options.router.navigate(
+        '!/'+ year +'/'+ month, { trigger: true }
       );
     },
 
-    save: function(e){
-      var date = this.input.val().split('-');
+    render: function(){
+      this.$el.html( this.template );
+    },
 
-      Options.save({
+    save: function(e){
+      var value = this.$el.find('input').val(),
+        date = value.split('-');
+
+      this.model.save({
         year: date[0], month: date[1]
       });
     }
