@@ -1,12 +1,12 @@
 // Require.js allows us to configure shortcut alias
 require.config({
-	paths: {
-		order: 'libs/order',
-		jquery: 'libs/jquery/jquery',
-		underscore: 'libs/underscore/underscore',
-		backbone: 'libs/backbone/backbone',
-		localstorage: 'libs/backbone/localstorage'
-	}
+  paths: {
+    order: 'libs/order',
+    jquery: 'libs/jquery/jquery',
+    underscore: 'libs/underscore/underscore',
+    backbone: 'libs/backbone/backbone',
+    localstorage: 'libs/backbone/localstorage'
+  }
 });
 
 require([
@@ -21,5 +21,5 @@ require([
   jquery.noConflict(true);
 
   // Run Forest... RUN!
-	app.initialize();
+  app.initialize();
 });
