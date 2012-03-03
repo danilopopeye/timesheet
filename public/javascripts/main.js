@@ -4,7 +4,8 @@ require.config({
 		order: 'libs/order',
 		jquery: 'libs/jquery/jquery',
 		underscore: 'libs/underscore/underscore',
-		backbone: 'libs/backbone/backbone'
+		backbone: 'libs/backbone/backbone',
+		localstorage: 'libs/backbone/localstorage'
 	}
 });
 
