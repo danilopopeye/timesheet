@@ -13,10 +13,6 @@ define([
         o.year, o.month
       ) );
 
-      this.collection.bind('all', function(method, model){
-        console.log('collection ::', method, model);
-      }, this);
-
       this.collection.populate();
     },
 
@@ -24,6 +20,7 @@ define([
       this.$el.html( this.template( _.extend(
         this.collection.first().attributes, {
           abbr: _.bind(Utils.getDayAbbr, Utils),
+          name: _.bind(Utils.getMonthName, Utils),
           models: this.collection.models
         }, this.options
       ) ) );
