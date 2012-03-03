@@ -1,10 +1,10 @@
-define(['backbone'], function(Backbone){
+define(['backbone', 'views/index'], function(Backbone, vIndex){
 	return Backbone.Router.extend({
 		routes: {
 			'': 'index'
 		},
 		index: function(){
-			console.log('app.Router - index');
+			new vIndex;
 		}
 	});
 });
