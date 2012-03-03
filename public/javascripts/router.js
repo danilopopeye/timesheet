@@ -16,7 +16,7 @@ define([
       new vMain({
         year: year,
         month: month
-      });
+      }).render();
     }
   });
 });
