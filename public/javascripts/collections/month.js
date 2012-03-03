@@ -18,6 +18,7 @@ define([
           this.fillMonth();
         }
       },
+
       fillMonth: function(){
         var l = [], last = Utils.getLastDay(
           this.options.year, this.options.month
@@ -30,6 +31,14 @@ define([
         }
 
         this.add( l );
+      },
+
+      today: function(){
+        var d = new Date();
+
+        return this.find(function(model){
+          return Utils.isSameDay( d, model.get('date') );
+        }) || new Day
       }
     });
   };

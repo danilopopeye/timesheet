@@ -18,7 +18,7 @@ define([
 
     render: function(){
       this.$el.html( this.template( _.extend(
-        this.collection.first().attributes, {
+        this.collection.today().attributes, {
           abbr: _.bind(Utils.getDayAbbr, Utils),
           name: _.bind(Utils.getMonthName, Utils),
           models: this.collection.models
