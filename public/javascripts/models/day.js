@@ -1,4 +1,4 @@
-define([ 'backbone' ], function(Backbone){
+define([ 'backbone', 'utils' ], function(Backbone, Utils){
   return Backbone.Model.extend({
     defaults: {
       date: new Date,
@@ -6,6 +6,10 @@ define([ 'backbone' ], function(Backbone){
       exit_minute: '00',
       minimum: '17:45',
       maximum: '18:15'
+    },
+
+    today: function(){
+      return Utils.isSameDay( this.get('date'), new Date() );
     }
   });
 });

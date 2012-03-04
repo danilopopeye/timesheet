@@ -138,7 +138,7 @@ body {
   background: #8b0000;
 }
 #calendar {
-  background: #ccc;
+  background: #d3d3d3;
   overflow: auto;
   margin: 10px;
 }
@@ -146,6 +146,9 @@ body {
   text-align: center;
   line-height: 20px;
   float: left;
+}
+#calendar li.today {
+  background-color: #a9a9a9;
 }
 #calendar li span,
 #calendar li strong {

@@ -21,7 +21,7 @@
 <div id="calendar">
   <ul>
     <% _.each(models, function(model){ %>
-    <li>
+    <li <%= model.today() ? 'class="today"' : '' %>>
       <span><%= abbr( model.get('date').getDay() ) %></span>
       <strong><%= model.get('date').getDate() %></strong>
     </li>
