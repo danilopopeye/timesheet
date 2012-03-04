@@ -1,10 +1,15 @@
 define([
-  'backbone', 'underscore', 'utils', 'collections/month',  'text!/templates/main.html'
-], function(Backbone, _, Utils, month, template){
+  'backbone', 'underscore', 'jquery', 'utils',
+  'collections/month',  'text!/templates/main.html'
+], function(Backbone, _, $, Utils, month, template){
   return Backbone.View.extend({
     el: 'body',
 
     template: _.template( template ),
+
+    events: {
+      'click #calendar li': 'dayClick'
+    },
 
     initialize: function(){
       var o = this.options;
@@ -24,6 +29,21 @@ define([
           models: this.collection.models
         }, this.options
       ) ) );
+    },
+
+    dayClick: function(e){
+      e.preventDefault();
+
+      var el = $( e.currentTarget );
+
+      if( el.hasClass('active') ){
+        return false;
+      }
+
+      el
+        .siblings('.active').removeClass('active')
+      .end()
+        .addClass('active');
     }
   });
 });

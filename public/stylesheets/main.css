@@ -145,10 +145,15 @@ body {
 #calendar li {
   text-align: center;
   line-height: 20px;
+  cursor: pointer;
   float: left;
 }
-#calendar li.today {
+#calendar li.active {
   background-color: #a9a9a9;
+}
+#calendar li.today {
+  cursor: default;
+  color: #00008b;
 }
 #calendar li span,
 #calendar li strong {

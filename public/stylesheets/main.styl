@@ -47,10 +47,15 @@ body
   li
     text-align: center
     line-height: 20px
+    cursor: pointer
     float: left
 
-    &.today
+    &.active
       background-color: darkgray
+
+    &.today
+      cursor: default
+      color: darkblue
 
     span, strong
       display: block
