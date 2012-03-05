@@ -26,11 +26,7 @@ define([
 
         for( var i = 1; i <= last; i++ ){
           l.push({ 
-            date: new Date( year, ( month - 1 ), i ),
-            exit_hour: i,
-            exit_minute: '15',
-            minimum: i + ':00',
-            maximum: i+ ':30'
+            date: new Date( year, ( month - 1 ), i )
           });
         }
 
