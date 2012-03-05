@@ -4,7 +4,7 @@ define([
   return Backbone.Router.extend({
     routes: {
       '': 'index',
-      '!/:year/:month': 'main'
+      '!/:year/:month/:day': 'main'
     },
     index: function(){
       new vIndex({
@@ -12,10 +12,12 @@ define([
         router: this
       });
     },
-    main: function(year, month){
+    main: function(year, month, day){
       new vMain({
         year: year,
-        month: month
+        month: month,
+        day: day,
+        router: this
       }).render();
     }
   });

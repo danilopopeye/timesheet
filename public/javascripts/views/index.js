@@ -23,7 +23,7 @@ define([
         month = this.model.get('month');
 
       this.options.router.navigate(
-        '!/'+ year +'/'+ month, { trigger: true }
+        '!/'+ year +'/'+ month + '/today', { trigger: true }
       );
     },
 

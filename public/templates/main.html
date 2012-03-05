@@ -1,17 +1,17 @@
 <div id="header">
   <h1>
-    <span class="hour"><%= exit_hour %></span>
+    <span class="hour"><%= active.exit_hour %></span>
     <span class="divider">:</span>
-    <span class="minute"><%= exit_minute %></span>
+    <span class="minute"><%= active.exit_minute %></span>
   </h1>
 </div>
 <div id="content">
   <div class="hours">
     <div class="minimum">
-      <span><%= minimum %></span>
+      <span><%= active.minimum %></span>
     </div>
     <div class="maximum">
-      <span><%= maximum %></span>
+      <span><%= active.maximum %></span>
     </div>
   </div>
 </div>
@@ -21,7 +21,7 @@
 <div id="calendar">
   <ul>
     <% _.each(models, function(model){ %>
-    <li <%= model.today() ? 'class="today"' : '' %>>
+    <li <%= makeClass( model ) %>>
       <span><%= abbr( model.get('date').getDay() ) %></span>
       <strong><%= model.get('date').getDate() %></strong>
     </li>
