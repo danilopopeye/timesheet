@@ -4,6 +4,7 @@ define([
   return Backbone.Router.extend({
     routes: {
       '': 'index',
+      '!/clear': 'clear',
       '!/:year/:month/:day': 'main'
     },
     index: function(){
@@ -19,6 +20,15 @@ define([
         day: day,
         router: this
       }).render();
+    },
+    clear: function(){
+      var o = new options;
+
+      o.fetch();
+
+      o.destroy();
+
+      this.navigate('', { trigger: true });
     }
   });
 });
