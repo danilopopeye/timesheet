@@ -8,6 +8,12 @@ define([ 'backbone', 'utils' ], function(Backbone, Utils){
       maximum: '--:--'
     },
 
+    initialize: function(){
+      this.set({
+        date: new Date( this.get('date') )
+      });
+    },
+
     today: function(){
       return Utils.isSameDay( this.get('date'), new Date() );
     }
