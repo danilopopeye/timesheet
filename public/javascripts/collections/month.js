@@ -25,12 +25,10 @@ define([
         );
 
         for( var i = 1; i <= last; i++ ){
-          l.push({ 
+          this.create({ 
             date: new Date( year, ( month - 1 ), i )
           });
         }
-
-        this.add( l );
       },
 
       today: function(){
