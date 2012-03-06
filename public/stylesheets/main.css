@@ -202,13 +202,17 @@ body {
 #entrance {
   text-align: center;
   font-weight: bold;
-  margin: 20px;
+  margin: 10px;
+}
+#entrance input,
+#entrance button {
+  text-align: center;
 }
 #entrance input {
-  text-align: center;
   font-size: 40px;
-  width: 180px;
-  height: 72px;
+}
+#entrance button {
+  font-size: 20px;
 }
 #calendar {
   border: 1px solid;
