@@ -14,7 +14,7 @@ define([
       populate: function(){
         this.fetch();
 
-        if( this.length === 0 ){
+        if( this.isEmpty() ){
           this.fillMonth();
         }
       },
@@ -33,10 +33,9 @@ define([
 
       today: function(){
         var d = new Date();
-
         return this.find(function(model){
           return Utils.isSameDay( d, model.get('date') );
-        }) || new Day
+        });
       }
     });
   };
