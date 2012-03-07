@@ -19,6 +19,8 @@ define([
       ) );
 
       this.collection.populate();
+
+      this.model = this.getModel();
     },
 
     render: function(){
@@ -33,18 +35,16 @@ define([
         ].join(' ');
       }
 
-      var active = this.getActive();
-
       this.$el.html( this.template( _.extend({
-        active: active.attributes,
+        active: this.model.attributes,
         models: this.collection.models,
         abbr: _.bind(Utils.getDayAbbr, Utils),
         name: _.bind(Utils.getMonthName, Utils),
-        makeClass: _.bind(klass, active)
+        makeClass: _.bind(klass, this.model)
       }, this.options ) ) );
     },
 
-    getActive: function(){
+    getModel: function(){
       return this.options.day === 'today'
         ? this.collection.today()
         : this.getDay( this.options.day )
