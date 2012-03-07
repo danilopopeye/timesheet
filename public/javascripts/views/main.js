@@ -8,7 +8,8 @@ define([
     template: _.template( template ),
 
     events: {
-      'click #calendar li': 'dayClick'
+      'click #calendar li': 'dayClick',
+      'click #reset': 'reset'
     },
 
     initialize: function(){
@@ -78,6 +79,18 @@ define([
       return this.collection.at(
         parseInt( day, 10 ) - 1
       );
+    },
+
+    reset: function(e){
+      e.preventDefault();
+
+      localStorage.clear();
+
+      this.collection.reset([], {
+        silent: true
+      });
+
+      this.options.router.navigate('!/index', true);
     }
   });
 });
