@@ -25,6 +25,10 @@ define([
       this.model = this.getModel();
 
       this.model.bind('error', this.error, this);
+
+      this.model.bind('change', this.render, this);
+
+      this.model.trigger('change');
     },
 
     render: function(){

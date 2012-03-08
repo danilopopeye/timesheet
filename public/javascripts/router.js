@@ -20,7 +20,7 @@ define([
         month: month,
         day: day,
         router: this
-      }).render();
+      });
     },
     clear: function(){
       ( new options ).destroy();
