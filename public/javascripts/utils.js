@@ -1,4 +1,4 @@
-define([], function(){
+define(function(){
   var
     days = [
       'Sunday', 'Monday', 'Tuesday', 'Wednesday',
