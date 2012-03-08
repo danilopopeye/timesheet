@@ -9,6 +9,7 @@ define([
 
     events: {
       'click #calendar li': 'dayClick',
+      'blur #entrance, #exit': 'change',
       'click #reset': 'reset'
     },
 
@@ -22,6 +23,8 @@ define([
       this.collection.populate();
 
       this.model = this.getModel();
+
+      this.model.bind('error', this.error, this);
     },
 
     render: function(){
@@ -79,6 +82,22 @@ define([
       return this.collection.at(
         parseInt( day, 10 ) - 1
       );
+    },
+
+    change: function(e){
+      e.preventDefault();
+
+      var el = $(e.currentTarget);
+
+      this.model.save( el.attr('id'), el.val(), {
+        success: function(){
+          $('#footer').text('');
+        }
+      } );
+    },
+
+    error: function(model, message){
+      $('#footer').text( message );
     },
 
     reset: function(e){
