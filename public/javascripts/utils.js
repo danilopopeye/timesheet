@@ -15,6 +15,9 @@ define([], function(){
   }
 
   return {
+    isDate: function(d){
+      return Object.prototype.toString.call( d ) === '[object Date]';
+    },
     getLastDay: function getLastDay(year, month){
       return new Date( year, month, 0 ).getDate();
     },
@@ -28,9 +31,14 @@ define([], function(){
       return this.getDayName( d ).substr(0, 3);
     },
     isSameDay: function(x, y){
-      return x.getFullYear() === y.getFullYear() &&
+      x = new Date(x); y = new Date(y);
+      return this.isDate(x) && this.isDate(y) &&
+        x.getFullYear() === y.getFullYear() &&
         x.getMonth() === y.getMonth() &&
         x.getDate() === y.getDate();
+    },
+    isValidHour: function(h){
+      return /^([01][0-9]|2[0-4]):[0-5][0-9]$/.test( h ) || h === '--:--';
     }
   };
 });
