@@ -24,7 +24,6 @@ code,
 del,
 dfn,
 em,
-font,
 img,
 ins,
 kbd,
@@ -112,6 +111,9 @@ summary {
 body {
   overflow: hidden;
   padding-top: 20px;
+}
+.error {
+  color: #f00;
 }
 #header {
   background-color: #808080;
