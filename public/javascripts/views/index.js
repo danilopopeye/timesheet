@@ -9,6 +9,8 @@ define([
     initialize: function(){
       this.model.bind('change', this.redirect, this);
 
+      this.model.bind('error', this.error, this);
+
       this.model.fetch({
         error: _.bind(this.render, this)
       });
@@ -42,6 +44,10 @@ define([
       this.model.save({
         year: date[0], month: date[1]
       });
+    },
+
+    error: function(model, message){
+      this.$el.find('#message').text( message );
     }
   });
 });
