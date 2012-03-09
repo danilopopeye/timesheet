@@ -8,6 +8,15 @@ define(['backbone', 'localstorage'], function(Backbone, Store){
       month: null,
       year: null,
       id: 'timesheet-options' // localStorage need a id
+    },
+
+    validate: function(attr, errors){
+      var year = parseInt( attr.year, 10 ),
+        month = parseInt( attr.month, 10 );
+
+      if( isNaN( year ) || isNaN( month ) ){
+        return "The month must be YYYY-MM";
+      }
     }
   });
 });
