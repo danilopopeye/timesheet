@@ -15,15 +15,19 @@ define([
     },
 
     events: {
-      'click button': 'save'
+      'blur input': 'change'
     },
 
     redirect: function(){
       var year = this.model.get('year'),
         month = this.model.get('month');
 
+      if( ! year || ! month ){
+        return this.render();
+      }
+
       this.options.router.navigate(
-        '!/'+ year +'/'+ month + '/today', { trigger: true }
+        '!/'+ year +'/'+ month + '/today', true
       );
     },
 
@@ -31,7 +35,7 @@ define([
       this.$el.html( this.template );
     },
 
-    save: function(e){
+    change: function(e){
       var value = this.$el.find('input').val(),
         date = value.split('-');
 
