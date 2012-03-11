@@ -113,6 +113,7 @@ body {
   padding-top: 20px;
 }
 .error {
+  font-size: 12px;
   color: #f00;
 }
 #header {
@@ -152,9 +153,9 @@ body {
 }
 #calendar li.active {
   background-color: #a9a9a9;
+  cursor: default;
 }
 #calendar li.today {
-  cursor: default;
   color: #00008b;
 }
 #calendar li span,
