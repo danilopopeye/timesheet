@@ -14,7 +14,7 @@
     "npm": "1.1.x"
 	},
 	"dependencies": {
-		"coffe-script": "1.2.x",
+		"coffee-script": "1.2.x",
 		"express": "2.x",
 		"jade": "0.x",
 		"stylus": "0.x",
