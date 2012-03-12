@@ -1,0 +1,74 @@
+@import nib
+
+global-reset()
+reset-html5()
+
+// colors
+// E6E2AF
+// A7A37E
+// EFECCA
+// 046380
+// 002F2F
+
+body
+  overflow: hidden
+  padding-top: 20px
+
+.error
+  font-size: 12px
+  color: red
+
+#header
+  background-color: gray
+  margin: 10px
+
+  h1
+    font-weight: bold
+    font-size: 100px
+
+#content
+  background-color: lightgray
+  text-align: center
+
+  .hours
+    div
+      padding: 10px
+      border: 1px solid
+
+      &.minimum
+        color: lightgreen
+        background: green
+
+      &.maximum
+        color: red
+        background: darkred
+
+#calendar
+  background: lightgray
+  overflow: auto
+  margin: 10px
+
+  li
+    text-align: center
+    line-height: 20px
+    cursor: pointer
+    float: left
+
+    &.active
+      background-color: darkgray
+      cursor: default
+
+    &.today
+      color: darkblue
+
+    span, strong
+      display: block
+
+#month_box
+  position: absolute
+  border: 1px solid black
+  text-align: center
+  padding: 10px
+  width: 60%
+
+@import portait

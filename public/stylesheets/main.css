@@ -1,0 +1,256 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+body {
+  overflow: hidden;
+  padding-top: 20px;
+}
+.error {
+  font-size: 12px;
+  color: #f00;
+}
+#header {
+  background-color: #808080;
+  margin: 10px;
+}
+#header h1 {
+  font-weight: bold;
+  font-size: 100px;
+}
+#content {
+  background-color: #d3d3d3;
+  text-align: center;
+}
+#content .hours div {
+  padding: 10px;
+  border: 1px solid;
+}
+#content .hours div.minimum {
+  color: #90ee90;
+  background: #008000;
+}
+#content .hours div.maximum {
+  color: #f00;
+  background: #8b0000;
+}
+#calendar {
+  background: #d3d3d3;
+  overflow: auto;
+  margin: 10px;
+}
+#calendar li {
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  float: left;
+}
+#calendar li.active {
+  background-color: #a9a9a9;
+  cursor: default;
+}
+#calendar li.today {
+  color: #00008b;
+}
+#calendar li span,
+#calendar li strong {
+  display: block;
+}
+#month_box {
+  position: absolute;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 10px;
+  width: 60%;
+}
+#header h1 {
+  padding: 10px 0;
+  text-align: center;
+}
+#content {
+  margin: 10px;
+  padding: 10px;
+}
+#content .hours {
+  zoom: 1;
+}
+#content .hours:before,
+#content .hours:after {
+  content: "";
+  display: table;
+}
+#content .hours:after {
+  clear: both;
+}
+#content .hours span {
+  font-size: 50px;
+}
+#content .hours div {
+  width: 113px;
+  padding: 10px;
+  border: 1px solid;
+}
+#content .hours div.minimum {
+  float: left;
+}
+#content .hours div.maximum {
+  float: right;
+}
+.input_hours {
+  text-align: center;
+  font-weight: bold;
+  margin: 10px;
+}
+.input_hours input,
+.input_hours button {
+  text-align: center;
+}
+.input_hours input {
+  font-size: 35px;
+  max-width: 45%;
+}
+.input_hours button {
+  font-size: 20px;
+}
+#calendar {
+  border: 1px solid;
+  height: 60px;
+}
+#calendar ul {
+  width: 666em;
+}
+#calendar li {
+  border-right: 1px solid;
+  padding: 10px 5px;
+  height: 40px;
+  width: 49px;
+}
+#calendar li:last-child {
+  border: 0 none;
+}
+#calendar li strong {
+  font-weight: bold;
+}
+#month_box {
+  top: 50%;
+  left: 15%;
+}
+footer {
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+footer #reset {
+  float: right;
+  margin-right: 10px;
+}
+footer #clear {
+  float: left;
+  margin-left: 10px;
+}

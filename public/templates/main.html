@@ -1,0 +1,33 @@
+<div id="header">
+  <h1><%= active.regular %></h1>
+</div>
+<div id="content">
+  <div class="hours">
+    <div class="minimum">
+      <span><%= active.minimum %></span>
+    </div>
+    <div class="maximum">
+      <span><%= active.maximum %></span>
+    </div>
+  </div>
+</div>
+<div class="input_hours">
+  <input id="entrance" type="time" value="<%= active.entrance %>" />
+  <input id="exit" type="time" value="<%= active.exit %>" />
+</div>
+<div id="calendar">
+  <ul>
+    <% _.each(models, function(model){ %>
+    <li <%= makeClass( model ) %>>
+      <% var date = new Date( model.get('date') ); %>
+      <span><%= abbr( date.getDay() ) %></span>
+      <strong><%= date.getDate() %></strong>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+<footer>
+  <a id="clear" href="#!/clear">clear</a>
+  <span id="footer"><%= name( month ) %> - <%= year %></span>
+  <a id="reset" href="#/reset">reset</a>
+</footer>
