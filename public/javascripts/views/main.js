@@ -1,6 +1,6 @@
 define([
   'backbone', 'underscore', 'jquery', 'utils',
-  'collections/month',  'text!/templates/main.html'
+  'collections/month',  'text!../../templates/main.html'
 ], function(Backbone, _, $, Utils, month, template){
   return Backbone.View.extend({
     el: 'body',

@@ -1,5 +1,5 @@
 define([
-  'backbone', 'underscore', 'text!/templates/index.html'
+  'backbone', 'underscore', 'text!../../templates/index.html'
 ], function(Backbone, _, template){
   return Backbone.View.extend({
     el: 'body',
