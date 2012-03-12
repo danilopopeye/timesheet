@@ -22,7 +22,7 @@ define(function(){
       return new Date( year, month, 0 ).getDate();
     },
     getMonthName: function(m){
-      return months[ i( m ) ] || '';
+      return months[ i( m ) - 1 ] || '';
     },
     getDayName: function(d){
       return days[ i( d ) ] || '';
