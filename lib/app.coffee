@@ -23,15 +23,18 @@ app.configure ->
   app.use app.router
 
 app.configure 'development', ->
+  app.set 'script', 'main.js'
   app.use express.errorHandler
     dumpExceptions: true
     showStack: true
 
 app.configure 'production', ->
+  app.set 'script', 'production.js'
   app.use express.errorHandler()
 
 app.get '/', (req, res) ->
-  res.render 'index'
+  res.render 'index',
+    script: app.set 'script'
 
 app.get '/iframe', (req, res) ->
   res.render 'iframe', layout: false
