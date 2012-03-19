@@ -38,7 +38,7 @@ define(function(){
         x.getDate() === y.getDate();
     },
     isValidHour: function(h){
-      return /^([01][0-9]|2[0-4]):[0-5][0-9]$/.test( h ) || h === '--:--';
+      return /^([01]?[0-9]|2[0-4]):[0-5][0-9]$/.test( h ) || h === '--:--';
     }
   };
 });
