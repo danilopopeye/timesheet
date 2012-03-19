@@ -37,6 +37,11 @@ define(function(){
         x.getMonth() === y.getMonth() &&
         x.getDate() === y.getDate();
     },
+    isSameMonth: function(year, month){
+      var d = new Date();
+      return i( year ) === d.getFullYear() &&
+        i( month ) - 1 === d.getMonth();
+    },
     isValidHour: function(h){
       return /^([01]?[0-9]|2[0-4]):[0-5][0-9]$/.test( h ) || h === '--:--';
     }
