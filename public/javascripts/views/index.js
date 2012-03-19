@@ -1,6 +1,6 @@
 define([
-  'backbone', 'underscore', 'text!../../templates/index.html'
-], function(Backbone, _, template){
+  'backbone', 'underscore', 'text!../../templates/index.html', 'utils'
+], function(Backbone, _, template, Utils){
   return Backbone.View.extend({
     el: 'body',
 
@@ -29,8 +29,13 @@ define([
       }
 
       this.options.router.navigate(
-        '!/'+ year +'/'+ month + '/today', true
+        this.findRoute(year, month), true
       );
+    },
+
+    findRoute: function(year, month){
+      return Utils.isSameMonth(year, month)
+        ? '!/today' : '!/'+ year +'/'+ month + '/1';
     },
 
     render: function(){
