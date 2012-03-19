@@ -12,5 +12,5 @@
   },
 
   name: "main",
-  out: "public/javascripts/main-built.js"
+  out: "public/javascripts/production.js"
 })

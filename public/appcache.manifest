@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# version 0.2.0
+
+CACHE:
+
+# html files
+/
+
+# stylesheets
+stylesheets/main.css
+
+# javascript
+javascripts/libs/require.js
+javascripts/production.js

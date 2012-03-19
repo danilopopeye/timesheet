@@ -11,6 +11,7 @@ compile = (str, path) ->
     .use(nib())
 
 app.configure ->
+  app.use app.router
   app.use stylus.middleware
     src: __dirname + '/../public'
     compile: compile
@@ -20,18 +21,24 @@ app.configure ->
   app.use express.logger()
   app.use express.bodyParser()
   app.use express.methodOverride()
-  app.use app.router
 
 app.configure 'development', ->
+  app.set 'script', 'main.js'
   app.use express.errorHandler
     dumpExceptions: true
     showStack: true
 
+  # development doesn't use cache
+  app.get '/appcache.manifest', (req, res) ->
+    res.end ''
+
 app.configure 'production', ->
+  app.set 'script', 'production.js'
   app.use express.errorHandler()
 
 app.get '/', (req, res) ->
-  res.render 'index'
+  res.render 'index',
+    script: app.set 'script'
 
 app.get '/iframe', (req, res) ->
   res.render 'iframe', layout: false
