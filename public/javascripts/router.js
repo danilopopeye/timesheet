@@ -18,7 +18,7 @@ define([
     main: function(year, month, day){
       new vMain({
         year: year,
-        month: month,
+        month: parseInt( month, 10 ) - 1,
         day: day,
         router: this
       });
@@ -31,7 +31,7 @@ define([
       var d = new Date();
 
       this.main(
-        d.getFullYear(), d.getMonth(), d.getDate()
+        d.getFullYear(), d.getMonth() + 1, d.getDate()
       );
     }
   });
