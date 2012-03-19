@@ -6,6 +6,7 @@ define([
       '': 'index',
       '!/index': 'index',
       '!/clear': 'clear',
+      '!/today': 'today',
       '!/:year/:month/:day': 'main'
     },
     index: function(){
@@ -25,6 +26,13 @@ define([
     clear: function(){
       ( new options ).destroy();
       this.navigate('!/index', true);
+    },
+    today: function(){
+      var d = new Date();
+
+      this.main(
+        d.getFullYear(), d.getMonth(), d.getDate()
+      );
     }
   });
 });
