@@ -11,4 +11,4 @@ stylesheets/main.css
 
 # javascript
 javascripts/libs/require.js
-javascripts/main-built.js
+javascripts/production.js
