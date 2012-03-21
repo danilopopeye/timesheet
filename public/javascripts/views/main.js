@@ -88,7 +88,7 @@ define([
         .addClass('active');
 
       o.router.navigate(
-        [ '!', o.year, o.month, day ].join('/'), {
+        [ '!', o.year, o.month + 1, day ].join('/'), {
           trigger: true
         }
       );
