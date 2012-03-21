@@ -50,6 +50,18 @@ define([
         name: _.bind(Utils.getMonthName, Utils),
         makeClass: _.bind(klass, this.model)
       }, this.options ) ) );
+
+      this.centralize();
+    },
+
+    centralize: function(e){
+      var calendar = this.$el.find('#calendar'),
+        size = calendar.width(),
+        active = parseInt( calendar.find('.active strong').html(), 10 ),
+        left = ( ( active - 1 ) * 60 ) + 30
+        scroll = left - ( size / 2 );
+
+      calendar.scrollLeft( scroll );
     },
 
     getModel: function(){
