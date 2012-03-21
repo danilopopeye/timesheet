@@ -113,7 +113,7 @@ define([
         silent: true
       });
 
-      this.options.router.navigate('!/index', true);
+      this.options.router.navigate('!/clear', true);
     }
   });
 });
