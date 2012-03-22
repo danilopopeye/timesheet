@@ -1,9 +1,22 @@
 
+0.3.0 / 2012-03-22
+==================
+
+  * Build production file;
+  * bugfix: Use friendly month on routes;
+  * Centralize the calendar on active day;
+  * Reset button redirects to !/clear and then !/index;
+  * Added the changelog file;
+  * Normalized the month to JS value:
+  * Merge branch 'feature/refactoring_today_route' into develop
+  * views/index redirecting to new !/today route;
+  * Router added !/today;
+  * Utils#isSameMonth;
+  * Merge branch 'release/0.2' into develop
+
 0.2.0 / 2012-03-19
 ==================
 
- * Merge branch `release/0.2` into develop
- * Bump version;
  * Updated the production.js file;
  * Doesn't serve the appcache manifest on development;
  * Using the NODE_ENV to set the main require module;
@@ -11,11 +24,11 @@
  * Utils#isValidHour now accepts 07:00 and 7:00;
  * Basic application cache manifest;
  * Back to the dev build;
+ * Merge branch `release/0.1` into develop
 
 0.1.0 / 2012-03-12
 ==================
 
- * Merge branch `release/0.1` into develop
  * Reference the build file on require tag;
  * Build the app as a single file;
  * Created the build file;
