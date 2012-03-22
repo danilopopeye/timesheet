@@ -22,7 +22,7 @@ define(function(){
       return new Date( year, month, 0 ).getDate();
     },
     getMonthName: function(m){
-      return months[ i( m ) - 1 ] || '';
+      return months[ i( m ) ] || '';
     },
     getDayName: function(d){
       return days[ i( d ) ] || '';
@@ -36,6 +36,11 @@ define(function(){
         x.getFullYear() === y.getFullYear() &&
         x.getMonth() === y.getMonth() &&
         x.getDate() === y.getDate();
+    },
+    isSameMonth: function(year, month){
+      var d = new Date();
+      return i( year ) === d.getFullYear() &&
+        i( month ) === d.getMonth();
     },
     isValidHour: function(h){
       return /^([01]?[0-9]|2[0-4]):[0-5][0-9]$/.test( h ) || h === '--:--';

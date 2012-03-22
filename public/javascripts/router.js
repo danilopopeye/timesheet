@@ -6,6 +6,7 @@ define([
       '': 'index',
       '!/index': 'index',
       '!/clear': 'clear',
+      '!/today': 'today',
       '!/:year/:month/:day': 'main'
     },
     index: function(){
@@ -17,7 +18,7 @@ define([
     main: function(year, month, day){
       new vMain({
         year: year,
-        month: month,
+        month: parseInt( month, 10 ) - 1,
         day: day,
         router: this
       });
@@ -25,6 +26,13 @@ define([
     clear: function(){
       ( new options ).destroy();
       this.navigate('!/index', true);
+    },
+    today: function(){
+      var d = new Date();
+
+      this.main(
+        d.getFullYear(), d.getMonth() + 1, d.getDate()
+      );
     }
   });
 });
