@@ -1,4 +1,11 @@
 
+0.3.1 / 2012-03-23
+==================
+
+  * bugfix: heroku engine spec;
+  * bugfix: better title as iPhone webapp;
+  * Merge branch 'release/0.3' into develop
+
 0.3.0 / 2012-03-22
 ==================
 
