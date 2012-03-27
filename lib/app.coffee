@@ -13,10 +13,10 @@ compile = (str, path) ->
 app.configure ->
   app.use app.router
   app.use stylus.middleware
-    src: __dirname + '/../public'
+    src: "#{__dirname}/../public"
     compile: compile
-  app.use express.static( __dirname + '/../public')
-  app.set 'views', __dirname + '/views'
+  app.use express.static "#{__dirname}/../public"
+  app.set 'views', "#{__dirname}/views"
   app.set 'view engine', 'jade'
   app.use express.logger()
   app.use express.bodyParser()
