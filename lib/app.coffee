@@ -15,6 +15,7 @@ app.configure ->
   app.use stylus.middleware
     src: "#{__dirname}/../public"
     compile: compile
+  app.use express.favicon "#{__dirname}/../public/favicon.ico"
   app.use express.static "#{__dirname}/../public"
   app.set 'views', "#{__dirname}/views"
   app.set 'view engine', 'jade'
