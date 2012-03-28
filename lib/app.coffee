@@ -1,6 +1,7 @@
 express = require 'express'
 stylus = require 'stylus'
 nib = require 'nib'
+fs = require 'fs'
 
 app = module.exports = express.createServer()
 
@@ -40,6 +41,16 @@ app.configure 'production', ->
 app.get '/', (req, res) ->
   res.render 'index',
     script: app.set 'script'
+
+app.get '/tests', (req, res) ->
+  fs.readdir "public/tests", (err, files) ->
+    next err if err isnt null
+
+    tests = ("tests/#{file}" for file in files when /spec\.js$/.test file)
+
+    res.render 'tests',
+      layout: false,
+      files: tests
 
 app.listen process.env.PORT
 console.log 'Express server listening on port %d in %s mode', app.address().port, app.settings.env

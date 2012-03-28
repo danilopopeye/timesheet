@@ -1,0 +1,34 @@
+!!! 5
+html
+  head
+    meta(charset="UTF-8")
+    title Timesheet - Tests
+    link(rel="shortcut icon", href="/favicon.ico")
+    link(rel="stylesheet", href="/tests/libs/mocha.css")
+    script(type="text/javascript", src="/tests/libs/mocha.js")
+    script(type="text/javascript", src="/tests/libs/chai.js")
+    script(type="text/javascript", src="/javascripts/libs/require.js")
+  body
+    #mocha Timesheet
+
+    script(type="text/javascript")
+      var files = '#{files}'.split(',');
+
+      mocha.setup('bdd');
+
+      require.config({
+        baseUrl: '/javascripts',
+        paths: {
+          text: 'libs/text',
+          jquery: 'libs/jquery/jquery',
+          underscore: 'libs/underscore/underscore',
+          backbone: 'libs/backbone/backbone',
+          localstorage: 'libs/backbone/localstorage'
+        }
+      });
+
+      require(files, function(require){
+        chai.Assertion.includeStack = false;
+        window.expect = chai.expect;
+        mocha.run();
+      });
