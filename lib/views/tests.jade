@@ -7,6 +7,7 @@ html
     link(rel="stylesheet", href="/tests/libs/mocha.css")
     script(type="text/javascript", src="/tests/libs/mocha.js")
     script(type="text/javascript", src="/tests/libs/chai.js")
+    script(type="text/javascript", src="/tests/libs/jack.js")
     script(type="text/javascript", src="/javascripts/libs/require.js")
   body
     #mocha Timesheet
@@ -30,6 +31,7 @@ html
 
       require(files, function(require){
         chai.Assertion.includeStack = false;
+        chai.use(jack.chai);
         window.expect = chai.expect;
         mocha.run();
       });
