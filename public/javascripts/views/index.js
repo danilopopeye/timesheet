@@ -2,7 +2,7 @@ define([
   'backbone', 'underscore', 'text!../../templates/index.html', 'utils'
 ], function(Backbone, _, template, Utils){
   return Backbone.View.extend({
-    el: 'body',
+    el: '#timesheet',
 
     template: template,
 

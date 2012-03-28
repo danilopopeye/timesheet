@@ -3,7 +3,7 @@ define([
   'collections/month',  'text!../../templates/main.html'
 ], function(Backbone, _, $, Utils, month, template){
   return Backbone.View.extend({
-    el: 'body',
+    el: '#timesheet',
 
     template: _.template( template ),
 
