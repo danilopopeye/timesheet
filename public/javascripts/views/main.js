@@ -87,7 +87,7 @@ define([
       .end()
         .addClass('active');
 
-      o.router.navigate(
+      Backbone.history.navigate(
         [ '!', o.year, o.month + 1, day ].join('/'), {
           trigger: true
         }
@@ -125,7 +125,7 @@ define([
         silent: true
       });
 
-      this.options.router.navigate('!/clear', true);
+      Backbone.history.navigate('!/clear', true);
     }
   });
 });

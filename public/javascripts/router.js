@@ -11,16 +11,14 @@ define([
     },
     index: function(){
       new vIndex({
-        model: new options,
-        router: this
+        model: new options
       });
     },
     main: function(year, month, day){
       new vMain({
         year: year,
         month: parseInt( month, 10 ) - 1,
-        day: day,
-        router: this
+        day: day
       });
     },
     clear: function(){

@@ -28,7 +28,7 @@ define([
         return this.render();
       }
 
-      this.options.router.navigate(
+      Backbone.history.navigate(
         this.findRoute(year, month), true
       );
     },
