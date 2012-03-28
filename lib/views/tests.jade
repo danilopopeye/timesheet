@@ -12,12 +12,13 @@ html
     #mocha Timesheet
 
     script(type="text/javascript")
-      var files = '#{files}'.split(',');
+      var files = '#{files}'.split(','),
+        isCoverage = window.location.href !== window.top.location.href;
 
       mocha.setup('bdd');
 
       require.config({
-        baseUrl: '/javascripts',
+        baseUrl: isCoverage ? '/jscoverage' : '/javascripts',
         paths: {
           text: 'libs/text',
           jquery: 'libs/jquery/jquery',
