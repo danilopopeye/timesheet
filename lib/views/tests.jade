@@ -10,7 +10,8 @@ html
     script(type="text/javascript", src="/javascripts/libs/require.js")
   body
     #timesheet(style="display:none")
-    #mocha Timesheet
+    #mocha
+      a(href="/tests") Timesheet
 
     script(type="text/javascript")
       var files = '#{files}'.split(','),
