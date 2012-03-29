@@ -3,7 +3,7 @@ define(function(){
     days = [
       'Sunday', 'Monday', 'Tuesday', 'Wednesday',
       'Thursday', 'Friday', 'Saturday'
-    ], 
+    ],
 
     months = [
       'January','February','March','April','May','June','July',
@@ -19,7 +19,7 @@ define(function(){
       return Object.prototype.toString.call( d ) === '[object Date]';
     },
     getLastDay: function getLastDay(year, month){
-      return new Date( year, month, 0 ).getDate();
+      return new Date( year, month + 1, 0 ).getDate();
     },
     getMonthName: function(m){
       return months[ i( m ) ] || '';
