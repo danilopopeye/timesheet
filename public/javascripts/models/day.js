@@ -31,8 +31,8 @@ define([ 'backbone', 'utils', 'calculator' ], function(Backbone, Utils, Calc){
       var value = this.get('entrance');
 
       this.save({
-        regular: Calc.regularTime( value ), 
-        minimum: Calc.minTime( value ), 
+        regular: Calc.regularTime( value ),
+        minimum: Calc.minTime( value ),
         maximum: Calc.maxTime( value )
       });
     }
