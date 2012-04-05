@@ -44,7 +44,8 @@ define([
         date = value.split('-');
 
       this.model.save({
-        year: date[0], month: parseInt( date[1], 10 ) - 1
+        year: parseInt( date[0], 10 ),
+        month: parseInt( date[1], 10 ) - 1
       });
     },
 
