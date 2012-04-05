@@ -1,13 +1,15 @@
 define(['backbone', 'localstorage'], function(Backbone, Store){
   return Backbone.Model.extend({
-    localStorage: new Store('options'), 
-    text: function(){
-      return [ this.get('year'), this.get('month') ].join('-');
-    },
+    localStorage: new Store('options'),
+
     defaults: {
       month: null,
       year: null,
       id: 'timesheet-options' // localStorage need a id
+    },
+
+    text: function(){
+      return [ this.get('year'), this.get('month') ].join('-');
     },
 
     validate: function(attr, errors){
