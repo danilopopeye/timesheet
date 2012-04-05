@@ -8,12 +8,9 @@ define([
 
     initialize: function(){
       this.model.bind('change', this.redirect, this);
-
       this.model.bind('error', this.error, this);
 
-      this.model.fetch({
-        error: _.bind(this.render, this)
-      });
+      this.model.fetch();
     },
 
     events: {
@@ -52,7 +49,11 @@ define([
     },
 
     error: function(model, message){
-      this.$el.find('#message').text( message );
+      if( message === 'Record not found' ){
+        this.render();
+      } else {
+        this.$el.find('#message').text( message );
+      }
     }
   });
 });
