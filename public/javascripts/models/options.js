@@ -13,11 +13,16 @@ define(['backbone', 'localstorage'], function(Backbone, Store){
     },
 
     validate: function(attr, errors){
-      var year = parseInt( attr.year, 10 ),
+      var d = new Date,
+        year = parseInt( attr.year, 10 ),
         month = parseInt( attr.month, 10 );
 
-      if( isNaN( year ) || isNaN( month ) ){
-        return "The month must be YYYY-MM";
+      if( isNaN( year ) || year < 0 || year > d.getFullYear() ){
+        return "The year must be valid";
+      }
+
+      if( isNaN( month ) || month < 1 || month > 12 ){
+        return "The month must be valid";
       }
     }
   });

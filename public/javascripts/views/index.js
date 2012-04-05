@@ -43,6 +43,12 @@ define([
       var value = this.$el.find('input').val(),
         date = value.split('-');
 
+      if( date.length !== 2 ){
+        return this.model.trigger(
+          'error', null, 'The data must be in YYYY-MM format'
+        );
+      }
+
       this.model.save({
         year: parseInt( date[0], 10 ),
         month: parseInt( date[1], 10 ) - 1

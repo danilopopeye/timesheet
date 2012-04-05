@@ -57,6 +57,28 @@ define([ 'models/options' ], function(options){
           this.o.set( this.invalid );
         });
       });
+
+      describe('should return a message', function(){
+        before(function(){
+          this.o.on('error', function(model, message){
+            this.message = message;
+          }, this);
+        });
+
+        it('when the year is invalid', function(){
+          this.o.set({
+            year: null, month: 12
+          });
+          expect( this.message ).equal("The year must be valid");
+        });
+
+        it('when the month is invalid', function(){
+          this.o.set({
+            year: 1985, month: null
+          });
+          expect( this.message ).equal("The month must be valid");
+        });
+      });
     });
   });
 });

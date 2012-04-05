@@ -41,25 +41,32 @@ if (! _$jscoverage['models/options.js']) {
   _$jscoverage['models/options.js'] = [];
   _$jscoverage['models/options.js'][1] = 0;
   _$jscoverage['models/options.js'][2] = 0;
-  _$jscoverage['models/options.js'][5] = 0;
-  _$jscoverage['models/options.js'][14] = 0;
-  _$jscoverage['models/options.js'][17] = 0;
-  _$jscoverage['models/options.js'][18] = 0;
+  _$jscoverage['models/options.js'][12] = 0;
+  _$jscoverage['models/options.js'][16] = 0;
+  _$jscoverage['models/options.js'][20] = 0;
+  _$jscoverage['models/options.js'][21] = 0;
+  _$jscoverage['models/options.js'][24] = 0;
+  _$jscoverage['models/options.js'][25] = 0;
 }
-_$jscoverage['models/options.js'].source = ["define<span class=\"k\">([</span><span class=\"s\">'backbone'</span><span class=\"k\">,</span> <span class=\"s\">'localstorage'</span><span class=\"k\">],</span> <span class=\"k\">function</span><span class=\"k\">(</span>Backbone<span class=\"k\">,</span> Store<span class=\"k\">)</span><span class=\"k\">{</span>","  <span class=\"k\">return</span> Backbone<span class=\"k\">.</span>Model<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{</span>","    localStorage<span class=\"k\">:</span> <span class=\"k\">new</span> Store<span class=\"k\">(</span><span class=\"s\">'options'</span><span class=\"k\">),</span>","    text<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","      <span class=\"k\">return</span> <span class=\"k\">[</span> <span class=\"k\">this</span><span class=\"k\">.</span>get<span class=\"k\">(</span><span class=\"s\">'year'</span><span class=\"k\">),</span> <span class=\"k\">this</span><span class=\"k\">.</span>get<span class=\"k\">(</span><span class=\"s\">'month'</span><span class=\"k\">)</span> <span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'-'</span><span class=\"k\">);</span>","    <span class=\"k\">}</span><span class=\"k\">,</span>","    defaults<span class=\"k\">:</span> <span class=\"k\">{</span>","      month<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","      year<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","      id<span class=\"k\">:</span> <span class=\"s\">'timesheet-options'</span> <span class=\"c\">// localStorage need a id</span>","    <span class=\"k\">}</span><span class=\"k\">,</span>","","    validate<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>attr<span class=\"k\">,</span> errors<span class=\"k\">)</span><span class=\"k\">{</span>","      <span class=\"k\">var</span> year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span> attr<span class=\"k\">.</span>year<span class=\"k\">,</span> <span class=\"s\">10</span> <span class=\"k\">),</span>","        month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span> attr<span class=\"k\">.</span>month<span class=\"k\">,</span> <span class=\"s\">10</span> <span class=\"k\">);</span>","","      <span class=\"k\">if</span><span class=\"k\">(</span> isNaN<span class=\"k\">(</span> year <span class=\"k\">)</span> <span class=\"k\">||</span> isNaN<span class=\"k\">(</span> month <span class=\"k\">)</span> <span class=\"k\">)</span><span class=\"k\">{</span>","        <span class=\"k\">return</span> <span class=\"s\">\"The month must be YYYY-MM\"</span><span class=\"k\">;</span>","      <span class=\"k\">}</span>","    <span class=\"k\">}</span>","  <span class=\"k\">}</span><span class=\"k\">);</span>","<span class=\"k\">}</span><span class=\"k\">);</span>"];
+_$jscoverage['models/options.js'].source = ["define<span class=\"k\">([</span><span class=\"s\">'backbone'</span><span class=\"k\">,</span> <span class=\"s\">'localstorage'</span><span class=\"k\">],</span> <span class=\"k\">function</span><span class=\"k\">(</span>Backbone<span class=\"k\">,</span> Store<span class=\"k\">)</span><span class=\"k\">{</span>","  <span class=\"k\">return</span> Backbone<span class=\"k\">.</span>Model<span class=\"k\">.</span>extend<span class=\"k\">(</span><span class=\"k\">{</span>","    localStorage<span class=\"k\">:</span> <span class=\"k\">new</span> Store<span class=\"k\">(</span><span class=\"s\">'options'</span><span class=\"k\">),</span>","","    defaults<span class=\"k\">:</span> <span class=\"k\">{</span>","      month<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","      year<span class=\"k\">:</span> <span class=\"k\">null</span><span class=\"k\">,</span>","      id<span class=\"k\">:</span> <span class=\"s\">'timesheet-options'</span> <span class=\"c\">// localStorage need a id</span>","    <span class=\"k\">}</span><span class=\"k\">,</span>","","    text<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">()</span><span class=\"k\">{</span>","      <span class=\"k\">return</span> <span class=\"k\">[</span> <span class=\"k\">this</span><span class=\"k\">.</span>get<span class=\"k\">(</span><span class=\"s\">'year'</span><span class=\"k\">),</span> <span class=\"k\">this</span><span class=\"k\">.</span>get<span class=\"k\">(</span><span class=\"s\">'month'</span><span class=\"k\">)</span> <span class=\"k\">].</span>join<span class=\"k\">(</span><span class=\"s\">'-'</span><span class=\"k\">);</span>","    <span class=\"k\">}</span><span class=\"k\">,</span>","","    validate<span class=\"k\">:</span> <span class=\"k\">function</span><span class=\"k\">(</span>attr<span class=\"k\">,</span> errors<span class=\"k\">)</span><span class=\"k\">{</span>","      <span class=\"k\">var</span> d <span class=\"k\">=</span> <span class=\"k\">new</span> Date<span class=\"k\">,</span>","        year <span class=\"k\">=</span> parseInt<span class=\"k\">(</span> attr<span class=\"k\">.</span>year<span class=\"k\">,</span> <span class=\"s\">10</span> <span class=\"k\">),</span>","        month <span class=\"k\">=</span> parseInt<span class=\"k\">(</span> attr<span class=\"k\">.</span>month<span class=\"k\">,</span> <span class=\"s\">10</span> <span class=\"k\">);</span>","","      <span class=\"k\">if</span><span class=\"k\">(</span> isNaN<span class=\"k\">(</span> year <span class=\"k\">)</span> <span class=\"k\">||</span> year <span class=\"k\">&lt;</span> <span class=\"s\">0</span> <span class=\"k\">||</span> year <span class=\"k\">&gt;</span> d<span class=\"k\">.</span>getFullYear<span class=\"k\">()</span> <span class=\"k\">)</span><span class=\"k\">{</span>","        <span class=\"k\">return</span> <span class=\"s\">\"The year must be valid\"</span><span class=\"k\">;</span>","      <span class=\"k\">}</span>","","      <span class=\"k\">if</span><span class=\"k\">(</span> isNaN<span class=\"k\">(</span> month <span class=\"k\">)</span> <span class=\"k\">||</span> month <span class=\"k\">&lt;</span> <span class=\"s\">1</span> <span class=\"k\">||</span> month <span class=\"k\">&gt;</span> <span class=\"s\">12</span> <span class=\"k\">)</span><span class=\"k\">{</span>","        <span class=\"k\">return</span> <span class=\"s\">\"The month must be valid\"</span><span class=\"k\">;</span>","      <span class=\"k\">}</span>","    <span class=\"k\">}</span>","  <span class=\"k\">}</span><span class=\"k\">);</span>","<span class=\"k\">}</span><span class=\"k\">);</span>"];
 _$jscoverage['models/options.js'][1]++;
 define(["backbone", "localstorage"], (function (Backbone, Store) {
   _$jscoverage['models/options.js'][2]++;
-  return Backbone.Model.extend({localStorage: new Store("options"), text: (function () {
-  _$jscoverage['models/options.js'][5]++;
+  return Backbone.Model.extend({localStorage: new Store("options"), defaults: {month: null, year: null, id: "timesheet-options"}, text: (function () {
+  _$jscoverage['models/options.js'][12]++;
   return [this.get("year"), this.get("month")].join("-");
-}), defaults: {month: null, year: null, id: "timesheet-options"}, validate: (function (attr, errors) {
-  _$jscoverage['models/options.js'][14]++;
-  var year = parseInt(attr.year, 10), month = parseInt(attr.month, 10);
-  _$jscoverage['models/options.js'][17]++;
-  if ((isNaN(year) || isNaN(month))) {
-    _$jscoverage['models/options.js'][18]++;
-    return "The month must be YYYY-MM";
+}), validate: (function (attr, errors) {
+  _$jscoverage['models/options.js'][16]++;
+  var d = new Date(), year = parseInt(attr.year, 10), month = parseInt(attr.month, 10);
+  _$jscoverage['models/options.js'][20]++;
+  if ((isNaN(year) || (year < 0) || (year > d.getFullYear()))) {
+    _$jscoverage['models/options.js'][21]++;
+    return "The year must be valid";
+  }
+  _$jscoverage['models/options.js'][24]++;
+  if ((isNaN(month) || (month < 1) || (month > 12))) {
+    _$jscoverage['models/options.js'][25]++;
+    return "The month must be valid";
   }
 })});
 }));

@@ -65,17 +65,28 @@ define([ 'router', 'models/options', 'views/index' ], function(Router, Options, 
       });
     });
 
-   describe('#change', function(){
-     it('should save the model with input value', function(){
-       options.on('change', function(a,b,c,d){
-         expect( options.get('year') ).equal(1985);
-         expect( options.get('month') ).equal(11);
-       });
+    describe('#change', function(){
+      it('should save the model with input value', function(){
+        options.on('change', function(a,b,c,d){
+          expect( options.get('year') ).equal(1985);
+          expect( options.get('month') ).equal(11);
+        });
 
-       view.$('input').val('1985-12');
-       view.change();
-     });
-   });
+        view.render();
+        view.$('input').val('1985-12');
+        view.change();
+      });
+
+      it('should show error message if not in YYYY-MM format', function(){
+        view.model.on('error', function(model, message){
+          expect( view.$('#message').text() ).equal(message);
+        });
+
+        view.render();
+        view.$('input').val('wrong');
+        view.change();
+      });
+    });
 
     describe('#error', function(){
       it('should call view#render on "Record not found"', function(){
