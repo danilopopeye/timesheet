@@ -10,16 +10,19 @@ require.config({
 });
 
 require([
-  'app',
   'backbone',
   'underscore',
-  'jquery'
-], function(app, backbone, underscore, jquery){
+  'jquery',
+  'router'
+], function(backbone, underscore, jquery, router){
   // remove global reference
   backbone.noConflict();
   underscore.noConflict();
   jquery.noConflict(true);
 
+  // create the app router
+  new router;
+
   // Run Forest... RUN!
-  app.initialize();
+  backbone.history.start();
 });
